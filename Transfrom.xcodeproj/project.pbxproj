@@ -15,7 +15,7 @@
 		C90B3CD11D2D0F5500AE0F07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C90B3CCF1D2D0F5500AE0F07 /* LaunchScreen.storyboard */; };
 		C90B3CDC1D2D0F5600AE0F07 /* TransfromTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B3CDB1D2D0F5600AE0F07 /* TransfromTests.m */; };
 		C90B3CE71D2D0F5600AE0F07 /* TransfromUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B3CE61D2D0F5600AE0F07 /* TransfromUITests.m */; };
-		C92478541D2E06CD00A6F280 /* playIcon2@3x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C92478531D2E06CD00A6F280 /* playIcon2@3x.jpg */; };
+		C96ED4771D2F9016008C4813 /* rotate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C96ED4761D2F9016008C4813 /* rotate.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,7 @@
 		C90B3CE21D2D0F5600AE0F07 /* TransfromUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransfromUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90B3CE61D2D0F5600AE0F07 /* TransfromUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransfromUITests.m; sourceTree = "<group>"; };
 		C90B3CE81D2D0F5600AE0F07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C92478531D2E06CD00A6F280 /* playIcon2@3x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "playIcon2@3x.jpg"; sourceTree = "<group>"; };
+		C96ED4761D2F9016008C4813 /* rotate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rotate.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +103,7 @@
 		C90B3CC01D2D0F5500AE0F07 /* Transfrom */ = {
 			isa = PBXGroup;
 			children = (
-				C92478531D2E06CD00A6F280 /* playIcon2@3x.jpg */,
+				C96ED4761D2F9016008C4813 /* rotate.jpg */,
 				C90B3CC41D2D0F5500AE0F07 /* AppDelegate.h */,
 				C90B3CC51D2D0F5500AE0F07 /* AppDelegate.m */,
 				C90B3CC71D2D0F5500AE0F07 /* ViewController.h */,
@@ -246,10 +246,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96ED4771D2F9016008C4813 /* rotate.jpg in Resources */,
 				C90B3CD11D2D0F5500AE0F07 /* LaunchScreen.storyboard in Resources */,
 				C90B3CCE1D2D0F5500AE0F07 /* Assets.xcassets in Resources */,
 				C90B3CCC1D2D0F5500AE0F07 /* Main.storyboard in Resources */,
-				C92478541D2E06CD00A6F280 /* playIcon2@3x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

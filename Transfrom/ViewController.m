@@ -8,19 +8,19 @@
 
 #import "ViewController.h"
 
+
+//以蓝色为标准
 @interface ViewController ()
 
 {
     UIImageView *picView;
-    BOOL menuisShowOrNot;
     CABasicAnimation *animation;
+    CGFloat angle;
+    int changeStep;
 }
 @end
 
 @implementation ViewController
-{
-    CGFloat angle;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,8 +28,8 @@
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 200,200)];
     view.backgroundColor = [UIColor redColor];
     [self.view addSubview:view];
-    picView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 10, 100,100)];
-    picView.image = [UIImage imageNamed:@"playIcon2@3x.jpg"];
+    picView = [[UIImageView alloc] initWithFrame:CGRectMake(50, 50, 100,100)];
+    picView.image = [UIImage imageNamed:@"rotate.jpg"];
     [view addSubview:picView];
     picView.userInteractionEnabled = YES;
     
@@ -42,20 +42,36 @@
 
 - (void)selectImage:(UITapGestureRecognizer *)sender
 {
-    if (menuisShowOrNot) {
-        menuisShowOrNot = NO;
-        animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(angle, 0.0, 0.0, 1.0)];
-        angle = 0;
-        animation.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(angle, 0.0, 0.0, 1.0)];
-
-    }else{
-        menuisShowOrNot = YES;
-        angle = M_PI/2;
-        animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
-        //围绕z轴旋转，垂直与屏幕
-        animation.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(angle, 0.0, 0.0, 1.0)];
+    switch (changeStep) {
+        case 0:
+            angle = M_PI/2;
+            animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
+            //围绕z轴旋转，垂直与屏幕
+            animation.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(angle, 0.0, 0.0, 1.0)];
+            changeStep = 1;
+            break;
+        case 1:
+            animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(angle, 0.0, 0.0, 1.0)];
+            angle = M_PI;
+            animation.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(angle, 0.0, 0.0, 1.0)];
+            changeStep = 2;
+            break;
+            
+        case 2:
+            animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(angle, 0.0, 0.0, 1.0)];
+            angle = M_PI+M_PI_2;
+            animation.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(angle, 0.0, 0.0, 1.0)];
+            changeStep = 3;
+            break;
+        case 3:
+            animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(angle, 0.0, 0.0, 1.0)];
+            angle = M_PI*2;
+            animation.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(angle, 0.0, 0.0, 1.0)];
+            changeStep = 0;
+            break;
+        default:
+            break;
     }
-    
     animation.duration = 0.3;
     animation.repeatCount = 1;
     animation.cumulative = YES;
